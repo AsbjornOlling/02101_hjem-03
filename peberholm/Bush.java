@@ -46,7 +46,11 @@ public class Bush extends Plant {
 			}
 		} //loop
 
-		// return the plants that didn't land in water
+		// return the plants in an array
 		return newPlants.toArray(new Plant[newPlants.size()]);
 	} // spreadSeeds
+
+	public String toString() {
+		return "Bush position ["+position.x+";"+position.y+"]";
+	}
 } // bush
