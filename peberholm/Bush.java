@@ -30,22 +30,20 @@ public class Bush extends Plant {
 
 		// make SEED_NO new plants
 		for (int i = 0; i < S; i++){
-			// TODO make new plant coords
+			// make new plant coords
 			Point newCoord = new Point(
 				PeberholmConstantsAndUtilities.getRandomIntBetween(minX,maxX),
 				PeberholmConstantsAndUtilities.getRandomIntBetween(minY,maxY)
 			);
 
+			// if it's on the island. add it
 			if ( PeberholmConstantsAndUtilities.positionOK(newCoord) ) {
 				newPlants.add(new Bush(newCoord));
 			}
-
-			// TODO if coords are ok
-				// construct a plant, add to arraylist
-
 		} // loop
 
-		// TODO convert arraylist to array
+		// return the plants that didn't land in water
+		return newPlants.toArray(new Plant[newPlants.size()]);
 	} // spreadSeeds
 
 
