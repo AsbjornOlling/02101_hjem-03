@@ -40,11 +40,8 @@ public class Moss extends Plant {
 				PeberholmConstantsAndUtilities.getRandomIntBetween(MIN_Y,MAX_Y)
 			);
 
-			// if it's on the island, add it
-			if ( PeberholmConstantsAndUtilities.positionOK(newCoord) ) {
-				newPlants.add(new Moss(newCoord));
-				//System.out.println("Added Moss at "+newCoord);
-			}
+			// add the new bush, without checking jack shit
+			newPlants.add(new Moss(newCoord));
 		} //loop
 
 		// return the plants in an array
