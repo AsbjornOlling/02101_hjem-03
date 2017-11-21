@@ -1,10 +1,9 @@
 import java.awt.Color;
 import java.awt.Point;
-import java.util.ArrayList;
 
-public class Type extends Plant {
-	private final int S = PeberholmConstantsAndUtilities.TYPE_SEED_NO;
-	private final int R = PeberholmConstantsAndUtilities.TYPE_RANGE;
+public class <Type> extends Plant {
+	private final int S = PeberholmConstantsAndUtilities.<TYPE>_SEED_NO;
+	private final int R = PeberholmConstantsAndUtilities.<TYPE>_RANGE;
 
 	private final int MIN_X;
 	private final int MAX_X;
@@ -12,11 +11,11 @@ public class Type extends Plant {
 	private final int MAX_Y;
 
 	// constructor
-	public Type(Point position) {
+	public <Type>(Point position) {
 		this.position = position;
 
 		// get color
-		this.color = PeberholmConstantsAndUtilities.TYPE_COLOR;
+		this.color = PeberholmConstantsAndUtilities.<TYPE>_COLOR;
 
 		// calculate min and max coords
 		MIN_X = this.position.x - R; // X
@@ -28,27 +27,22 @@ public class Type extends Plant {
 	// returns an array the surviving plants
 	public Plant[] spreadSeeds() {
 
-		// temporary list, because we don't yet know, 
-		// if the seeds land in water
-		ArrayList<Plant> newPlants = new ArrayList<Plant>();
+		// make plant array with correct size
+		Plant[] newPlants = new Plant[S];
 
-		// make SEED_NO new plants
+		// make S new plants
 		for (int i = 0; i < S; i++){
-			// make new plant coords
-			Point newCoord = new Point(
+			newPlants[i] = new <Type>(new Point(
 				PeberholmConstantsAndUtilities.getRandomIntBetween(MIN_X,MAX_X),
 				PeberholmConstantsAndUtilities.getRandomIntBetween(MIN_Y,MAX_Y)
-			);
-
-			// add the new bush, without checking jack shit
-			newPlants.add(new Type(newCoord));
+			));
 		} //loop
 
 		// return the plants in an array
-		return newPlants.toArray(new Plant[newPlants.size()]);
+		return newPlants;
 	} // spreadSeeds
 
 	public String toString() {
-		return "Type position ["+position.x+";"+position.y+"]";
+		return "<Type> position ["+position.x+";"+position.y+"]";
 	}
 } // bush
