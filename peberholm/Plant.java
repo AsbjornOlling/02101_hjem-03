@@ -18,6 +18,4 @@ public abstract class Plant {
 	public String toString() {
 		return "position ["+position.x+";"+position.y+"]";
 	}
-	
-
 }

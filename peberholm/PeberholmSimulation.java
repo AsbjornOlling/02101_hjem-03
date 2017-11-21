@@ -151,6 +151,7 @@ public class PeberholmSimulation {
 		do {
 		} while (!addPlantIfPossible(new Tree(
 				PeberholmConstantsAndUtilities.getLegalRandomPosition())));
+		//*/
 
 	}
 
@@ -183,6 +184,4 @@ public class PeberholmSimulation {
 		System.exit(0);
 	}
 	
-	
-
 }
