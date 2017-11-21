@@ -43,6 +43,7 @@ public class Tree extends Plant {
 			// if it's on the island, add it
 			if ( PeberholmConstantsAndUtilities.positionOK(newCoord) ) {
 				newPlants.add(new Tree(newCoord));
+				//System.out.println("Added Tree at "+newCoord);
 			}
 		} //loop
 

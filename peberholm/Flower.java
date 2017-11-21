@@ -43,6 +43,7 @@ public class Flower extends Plant {
 			// if it's on the island, add it
 			if ( PeberholmConstantsAndUtilities.positionOK(newCoord) ) {
 				newPlants.add(new Flower(newCoord));
+				//System.out.println("Added Flower at "+newCoord);
 			}
 		} //loop
 
