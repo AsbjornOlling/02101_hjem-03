@@ -8,12 +8,6 @@ public class PassengerPlane extends Plane {
 		this.passengers = passengers;
 	}
 	
-	public String toString(){
-		String planeString;
-		planeString = "Plane"+id+" "+manufacturer+" "+type+" "+"passengers:"+passengers;
-		return planeString;
-	}
-
 	public String property() {
 		return " seats:" + this.passengers;
 	}

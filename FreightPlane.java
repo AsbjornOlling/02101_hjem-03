@@ -8,12 +8,6 @@ public class FreightPlane extends Plane {
 		this.payload = payload;
 	}
 	
-	public String toString(){
-		String planeString;
-		planeString = "Plane"+id+" "+manufacturer+" "+type+" "+"payload:"+payload;
-		return planeString;
-	}
-
 	public String property() {
 		return " payload:" + this.payload;
 	}

@@ -26,7 +26,7 @@ public class Plane {
 	// Skriver det ud som String
 	public String toString(){
 		String planeString;
-		planeString = "Plane"+id+" "+manufacturer+" "+type;
+		planeString = "Plane"+id+" "+manufacturer+" "+type+property();
 		return planeString;
 	}//end toString
 	

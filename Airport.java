@@ -41,10 +41,7 @@ public class Airport {
 	public String toString() {
 		String string = "";
 		for(Plane plane : landedPlanes ) {
-			string += "Plane" + plane.id;
-			string += " "+plane.manufacturer+" "+plane.type;
-			string += plane.property();
-			string += "\n";
+			System.out.println(plane);
 		} // loop
 		return string;
 	} // toString
