@@ -1,7 +1,7 @@
 
 public class FreightPlane extends Plane {
 
-	public int payload;
+	private int payload;
 	
 	public FreightPlane(String manufacturer, String type, int payload) {
 		super(manufacturer, type);
@@ -12,5 +12,9 @@ public class FreightPlane extends Plane {
 		String planeString;
 		planeString = "Plane"+id+" "+manufacturer+" "+type+" "+"payload:"+payload;
 		return planeString;
+	}
+
+	public int property() {
+		return this.payload;
 	}
 }

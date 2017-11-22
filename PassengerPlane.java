@@ -14,4 +14,8 @@ public class PassengerPlane extends Plane {
 		return planeString;
 	}
 
+	public int property() {
+		return this.passengers;
+	}
+
 }
