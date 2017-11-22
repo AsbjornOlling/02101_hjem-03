@@ -9,6 +9,14 @@ public class Airport {
 
 	// assign an id, and add to list of landed planes
 	public void	land (Plane plane) {
+
+		// dont add new plane, if it matches an existing id
+		for( Plane p : landedPlanes ) {
+			if (p.id == plane.id) {
+				return;
+			}
+		}
+		// if plane id unique
 		planesLanded++;
 		plane.id = planesLanded;
 		landedPlanes.add(plane);
@@ -19,7 +27,7 @@ public class Airport {
 	public void start(int id) {
 		// search the list for plane matching id
 		int index = 0; // count indices manually in for-each lop
-		for(Plane plane : landedPlanes ) {
+		for( Plane plane : landedPlanes ) {
 			if (plane.id == id) {
 				landedPlanes.remove(index);
 			}
@@ -30,25 +38,15 @@ public class Airport {
 
 	// prints all the planes, with info
 	public String toString() {
-		String string = null;
+		String string = "";
 		for(Plane plane : landedPlanes ) {
 			string += "Plane";
 			string += plane.id + " ";
-
 			string += plane.manufacturer + " ";
-
 			string += plane.type + " ";
-
-			if ( plane instanceof FreightPlane ) {
-				string += "payload:";
-				string += plane.payload;
-			} else if ( plane instanceof PassengerPlane ) {
-				string += "seats";
-				string += plane.passengers;
-			}
-
+			string += plane.property();
 			string += "\n";
-		}
+		} // loop
 		return string;
 	} // toString
 
