@@ -15,6 +15,6 @@ public class FreightPlane extends Plane {
 	}
 
 	public String property() {
-		return "payload:" + this.payload;
+		return " payload:" + this.payload;
 	}
 }

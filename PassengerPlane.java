@@ -15,7 +15,7 @@ public class PassengerPlane extends Plane {
 	}
 
 	public String property() {
-		return "seats:" + this.passengers;
+		return " seats:" + this.passengers;
 	}
 
 }

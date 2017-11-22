@@ -30,6 +30,7 @@ public class Airport {
 		for( Plane plane : landedPlanes ) {
 			if (plane.id == id) {
 				landedPlanes.remove(index);
+				break;
 			}
 			index++;
 		} // loop
