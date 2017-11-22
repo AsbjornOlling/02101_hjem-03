@@ -4,19 +4,17 @@ public class Airport {
 	private ArrayList<Plane> landedPlanes = new ArrayList<Plane>();
 	private int planesLanded;
 
-	public Airport() {
-	}
 
 	// assign an id, and add to list of landed planes
 	public void	land (Plane plane) {
-
 		// dont add new plane, if it matches an existing id
 		for( Plane p : landedPlanes ) {
 			if (p.id == plane.id) {
 				return;
 			}
 		}
-		// if plane id unique
+
+		// if plane id is unique, add it
 		planesLanded++;
 		plane.id = planesLanded;
 		landedPlanes.add(plane);
@@ -45,6 +43,4 @@ public class Airport {
 		} // loop
 		return string;
 	} // toString
-
-
 } // class

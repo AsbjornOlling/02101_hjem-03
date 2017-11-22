@@ -1,9 +1,8 @@
 public class Plane {
-	
 	private static final int DEFAULT_ID = 0;
 	
-	protected String manufacturer, type;
-	int id;
+	public String manufacturer, type;
+	public int id;
 	/*
 	 * @param manufacturer
 	 * @param type
@@ -17,12 +16,12 @@ public class Plane {
 		this.id = DEFAULT_ID;
 	}
 	
-	
-	
+
 	public void setId(int id){
 		this.id = id;
 	}
 	
+
 	// Skriver det ud som String
 	public String toString(){
 		String planeString;
@@ -30,6 +29,7 @@ public class Plane {
 		return planeString;
 	}//end toString
 	
+
 	//denne metode skal sammenligne id nr paa to objekter af flyver.
 	public boolean equals(Plane plane){
 		// tjekker om objektet har den samme id som det Plane's id
@@ -40,15 +40,13 @@ public class Plane {
 		}
 	}
 	
-	
+
 	public int getId() {
 		return id;
 	}
 
+
 	public String property() {
 		return "";
 	}
-	
-	
-	
 }
