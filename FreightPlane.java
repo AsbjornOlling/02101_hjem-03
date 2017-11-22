@@ -1,7 +1,7 @@
 
 public class FreightPlane extends Plane {
 
-	private int payload;
+	public int payload;
 	
 	public FreightPlane(String manufacturer, String type, int payload) {
 		super(manufacturer, type);

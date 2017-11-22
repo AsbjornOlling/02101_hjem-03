@@ -1,7 +1,7 @@
 
 public class PassengerPlane extends Plane {
 
-	private int passengers;
+	public int passengers;
 	
 	public PassengerPlane(String manufacturer, String type, int passengers) {
 		super(manufacturer, type);
