@@ -30,10 +30,9 @@ public class Plane {
 	}//end toString
 	
 
-	//denne metode skal sammenligne id nr paa to objekter af flyver.
-	public boolean equals(Plane plane){
-		// tjekker om objektet har den samme id som det Plane's id
-		if (plane.id == this.id) {
+	// sammenligner id-feltet i to objekter
+	public boolean equals(Object o){
+		if ( ((Plane) o).id == this.id) {
 			return true;
 		} else { 
 			return false;
