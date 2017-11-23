@@ -5,18 +5,27 @@ public class Airport {
 	//The first method adds a plane to the those on the air port, and an assigns an a new id-number to that plane.
 	//The id-numbers start with 1 and are then increased by 1.
 	//If a plane wants to land which already has the id-number of plane on the airport, than is is not added.
-	
+	// Liste over planes i Airport
 	static ArrayList<Plane> planeList = new ArrayList<Plane>();
-	int i=1;
+	
+	//
 	public void 	land (Plane plane) {
-		for (int k=0;k<=planeList.size();k++) {
-			if (!(planeList.contains(plane.id))) {
-				plane.id = i;
-				i++;
+		
+		// for loop, der tjekker om et fly allerede holder i Airport
+		for (int k = 0 ; k <= planeList.size() ; k++ ) {
+			
+			// saetter q til at være Plane k fra planeList
+			Plane q = planeList.get(k);
+			
+			// Tjekker om flyet allerede findes i Airport, hvis dette ikke er tilfældet tilføjes det til listen
+			if (!(q.id == plane.id)) {
 				planeList.add(plane);
+				break;
 			}
+			
 		}
 	}
+	
 	int j;
 	//The second method removes the plane plane from those on the airport if it was actually there.
 	public void start (int id) {
