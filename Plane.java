@@ -41,8 +41,11 @@ public class Plane {
 		return trueOrFalse;
 	}
 	
-	
+	// korrekt?
 	public int getId() {
+		int i =0;
+		id = i;
+		i++;
 		return id;
 	}
 	
