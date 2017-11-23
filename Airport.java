@@ -13,17 +13,12 @@ public class Airport {
 		
 		// for loop, der tjekker om et fly allerede holder i Airport
 		for (int k = 0 ; k <= planeList.size() ; k++ ) {
-			
-			// saetter q til at være Plane k fra planeList
-			Plane q = planeList.get(k);
-			
 			// Tjekker om flyet allerede findes i Airport, hvis dette ikke er tilfældet tilføjes det til listen
-			if (!(q.id == plane.id)) {
-				planeList.add(plane);
+			if ( !(planeList.get(k).equals(plane) ) ) { // TODO hej oliver - den her er bare skrevet lidt mindre end før :)
 				break;
 			}
-			
 		}
+		// TODO - tilføj fly til planeList liiige her
 	}
 	
 	int j;
