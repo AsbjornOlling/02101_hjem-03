@@ -7,8 +7,10 @@ public class Airport {
 	//If a plane wants to land which already has the id-number of plane on the airport, than is is not added.
 	
 	static ArrayList<String> planeList = new ArrayList<String>();
-	
+	int i=1;
 	public void 	land (Plane plane) {
+		plane.id = i;
+		i++;
 		planeList.add(plane.toString());
 	}
 	
