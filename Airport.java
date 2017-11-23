@@ -6,18 +6,25 @@ public class Airport {
 	//The id-numbers start with 1 and are then increased by 1.
 	//If a plane wants to land which already has the id-number of plane on the airport, than is is not added.
 	
-	static ArrayList<String> planeList = new ArrayList<String>();
+	static ArrayList<Plane> planeList = new ArrayList<Plane>();
 	int i=1;
 	public void 	land (Plane plane) {
-		plane.id = i;
-		i++;
-		planeList.add(plane.toString());
+		for (int k=0;k<=planeList.size();k++) {
+			if (!(planeList.contains(plane.id))) {
+				plane.id = i;
+				i++;
+				planeList.add(plane);
+			}
+		}
 	}
-	
+	int j;
 	//The second method removes the plane plane from those on the airport if it was actually there.
 	public void start (int id) {
-		if (planeList.contains(id)) {
-			planeList.remove(id);
+		for (j=j;j<=planeList.size();j++) {
+			if (planeList.contains(id)) {
+				planeList.remove(j);
+				break;
+			}
 		}
 		
 	}
