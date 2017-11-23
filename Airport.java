@@ -16,6 +16,9 @@ public class Airport {
 	
 	//The second method removes the plane plane from those on the airport if it was actually there.
 	public void start (int id) {
+		if (planeList.contains(id)) {
+			planeList.remove(id);
+		}
 		
 	}
 	
