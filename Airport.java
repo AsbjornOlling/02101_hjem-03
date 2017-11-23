@@ -2,41 +2,63 @@ import java.util.ArrayList;
 
 public class Airport {
 	
-	//The first method adds a plane to the those on the air port, and an assigns an a new id-number to that plane.
-	//The id-numbers start with 1 and are then increased by 1.
-	//If a plane wants to land which already has the id-number of plane on the airport, than is is not added.
-	// Liste over planes i Airport
+	
 	static ArrayList<Plane> planeList = new ArrayList<Plane>();
 	
-	//
+	//i er variablen for id-nummre
+	int idnr=1;
+	
+	// land tjekker om det valgte plane er paa planeList for Airport
 	public void 	land (Plane plane) {
 		
-		// for loop, der tjekker om et fly allerede holder i Airport
-		for (int k = 0 ; k <= planeList.size() ; k++ ) {
-			// Tjekker om flyet allerede findes i Airport, hvis dette ikke er tilfældet tilføjes det til listen
-			if ( !(planeList.get(k).equals(plane) ) ) { // TODO hej oliver - den her er bare skrevet lidt mindre end før :)
-				break;
+		// for loop, der taeller op til max index for planeList. Det starter med 0, da det foerste index i arrays kaldes 0.
+		for (int k = 0 ; k < planeList.size() ; k++ ) {
+			
+			// Tjekker om flyet allerede findes i Airport, hvis dette er tilfaeldet stoppes loopet
+			if ( planeList.get(k).equals(plane) ) {
+				return;
 			}
 		}
-		// TODO - tilføj fly til planeList liiige her
-	}
+		//Hvis plane ikke findes i listen, vil den få tildelt en id, og blive tilfoejet til listen
+		plane.id=idnr;
+		planeList.add(plane);
 	
-	int j;
-	//The second method removes the plane plane from those on the airport if it was actually there.
+		//id'en taeller én op
+		idnr++;
+	}
+
+	// start tjekker om det valgte plane er paa planeList for Airport
 	public void start (int id) {
-		for (j=j;j<=planeList.size();j++) {
-			if (planeList.contains(id)) {
-				planeList.remove(j);
-				break;
+	
+		// for loop, der taeller op til max index for planeList. Det starter med 0, da det foerste index i arrays kaldes 0.
+		for (int k = 0 ; k < planeList.size() ; k++ ) {
+		
+			// Tjekker om flyet allerede findes i Airport, hvis dette er tilfaeldet fjernes dette plane fra planeList og loopet stoppes.
+			if (planeList.get(k).equals(id)) {
+			
+				// fjerner plane fra planeList
+				planeList.remove(k);
+			
+				// forlader loopet
+				return;
 			}
 		}
 		
 	}
 	
 	//The last method list all planes currently on the airport, one per line in order of the landings.
-	//lige nu printer den Arraylist direkte
 	public String toString () {
-		String stringPlaneList = planeList.toString();
+		
+		// Laver String uden value
+		String stringPlaneList ="";
+		
+		//for loop der taeller mellem 0 og max antal planes i planeList
+		for (int k=0 ; k < planeList.size() ; k++ ) {
+		
+			//Aendrer planeList til string, og laegger dem sammen i stringPlaneList, med et linjeskift efter hver planeinfo.
+			stringPlaneList += planeList.get(k).toString()+"\n";
+		}
+		// returnerer stringen der kan printes
 		return stringPlaneList;
 		
 	}
