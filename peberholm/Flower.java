@@ -24,13 +24,12 @@ public class Flower extends Plant {
 		MAX_Y = this.position.y + R;
 	} // end constr.
 
-	// returns an array the surviving plants
+	// returns an array of new plants
 	public Plant[] spreadSeeds() {
-
 		// make plant array with correct size
 		Plant[] newPlants = new Plant[S];
 
-		// make S new plants
+		// make S new plant objects
 		for (int i = 0; i < S; i++){
 			newPlants[i] = new Flower(new Point(
 				PeberholmConstantsAndUtilities.getRandomIntBetween(MIN_X,MAX_X),
@@ -38,11 +37,10 @@ public class Flower extends Plant {
 			));
 		} //loop
 
-		// return the plants in an array
 		return newPlants;
 	} // spreadSeeds
 
 	public String toString() {
 		return "Flower position ["+position.x+";"+position.y+"]";
 	}
-} // bush
+} // class
